@@ -26,8 +26,6 @@ body {
     font-family: var(--font-sans);
     line-height: 1.6;
     overflow-x: hidden;
-    min-height: 100vh;
-    position: relative;
 }
 
 /* ===== FONDO DE PARTÍCULAS ===== */
@@ -239,7 +237,6 @@ h1, h2, h3, .section-title, .prompt, .comando {
 .icono-blockchain::before {
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23A78BFA"><rect x="5" y="5" width="4" height="4" stroke="%23A78BFA"/><rect x="15" y="5" width="4" height="4" stroke="%23A78BFA"/><rect x="5" y="15" width="4" height="4" stroke="%23A78BFA"/><rect x="15" y="15" width="4" height="4" stroke="%23A78BFA"/></svg>');
 }
-/* Icono para código */
 .icono-code::before {
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%236366F1"><path d="M8 3 L3 8 L8 13 M16 3 L21 8 L16 13" stroke="%236366F1" stroke-width="2" fill="none"/></svg>');
 }
@@ -271,7 +268,7 @@ h1, h2, h3, .section-title, .prompt, .comando {
 /* ===== GRID DE PROYECTOS ===== */
 .proyectos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
@@ -284,6 +281,7 @@ h1, h2, h3, .section-title, .prompt, .comando {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    border-radius: 12px;
 }
 
 .proyecto-card:hover {
@@ -333,7 +331,6 @@ h1, h2, h3, .section-title, .prompt, .comando {
     flex-shrink: 0;
 }
 
-/* Reutilizamos las mismas clases de icono para las tarjetas */
 .card-icon.icono-nano { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%236366F1"><circle cx="12" cy="12" r="3"/><path d="M12 2 L12 7 M12 17 L12 22 M2 12 L7 12 M17 12 L22 12" stroke="%236366F1" stroke-width="1"/></svg>'); }
 .card-icon.icono-bio { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%236366F1"><path d="M6 2 L18 22 M18 2 L6 22" stroke="%236366F1" stroke-width="1"/><circle cx="12" cy="12" r="2" stroke="%236366F1"/></svg>'); }
 .card-icon.icono-datos { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23A78BFA"><path d="M2 12 L22 12 M12 2 L12 22" stroke="%23A78BFA" stroke-width="1"/></svg>'); }
@@ -556,7 +553,7 @@ h1, h2, h3, .section-title, .prompt, .comando {
     left: 0;
 }
 
-/* ===== MANIFIESTO ===== */
+/* ===== MANIFIESTO / ACERCA DE ===== */
 .manifiesto-contenido {
     background: rgba(10, 10, 10, 0.7);
     border: 1px solid var(--gris-oscuro);
