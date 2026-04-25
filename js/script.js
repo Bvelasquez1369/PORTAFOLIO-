@@ -1,7 +1,7 @@
 // DETECCIÓN DE MÓVIL
 const esMovil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-// CURSOR PERSONALIZADO 
+// CURSOR PERSONALIZADO (solo desktop)
 if (!esMovil) {
     const cursor = document.querySelector('.cursor');
     const seguidor = document.querySelector('.cursor-follower');
@@ -24,7 +24,7 @@ if (!esMovil) {
     }
 }
 
-// FONDO DE PARTÍCULAS 
+// FONDO DE PARTÍCULAS (optimizado)
 (function() {
     const canvas = document.getElementById('particles-canvas');
     if (!canvas) return;
@@ -47,7 +47,7 @@ if (!esMovil) {
             this.y = y;
             this.baseX = x;
             this.baseY = y;
-            this.tamano = Math.random() * 2 + 0.5; // reducido ligeramente
+            this.tamano = Math.random() * 2 + 0.5;
             this.densidad = Math.random() * 20 + 8;
             this.color = Math.random() > 0.6 ? '#6366F1' : '#A78BFA';
         }
@@ -82,7 +82,6 @@ if (!esMovil) {
 
     function inicializarParticulas() {
         particulas = [];
-        // Reducimos la cantidad de partículas en desktop para mejorar TBT
         const factor = esMovil ? 15000 : 10000;
         const cantidad = Math.floor((ancho * alto) / factor);
         for (let i = 0; i < cantidad; i++) {
@@ -164,7 +163,19 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// EFECTO TYPING EN TÍTULO
+// ANIMACIÓN DE APARICIÓN AL SCROLL
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.2 });
+document.querySelectorAll('.section').forEach(section => {
+    observer.observe(section);
+});
+
+// EFECTO TYPING
 const textosTitulo = [
     "🧠 Reprogramo mi mente con cada línea de código · el error es un feedback, no un fracaso ♾️",
     "⚡ Arquitecto de escalas: transmuto datos en decisiones, caos en estructura · alquimia digital 🔮",
@@ -205,7 +216,7 @@ function efectoEscritura() {
 }
 efectoEscritura();
 
-// PROYECTOS 
+// PROYECTOS
 const proyectos = [
     {
         titulo: "LUMI STORE - E-commerce de Lujo",
@@ -253,7 +264,7 @@ function cargarProyectos() {
 }
 cargarProyectos();
 
-// TERMINAL DINÁMICO (con efecto máquina de escribir)
+// TERMINAL DINÁMICO
 const mensajesTerminal = [
     "Cada línea de código es un paso hacia mi mejor versión",
     "Aprendo, desaprendo y vuelvo a aprender. Siempre en evolución",
@@ -293,5 +304,5 @@ function escribirTerminal() {
 }
 setTimeout(escribirTerminal, 1000);
 
-// ACTUALIZAR AÑO EN FOOTER
+// ACTUALIZAR AÑO
 document.getElementById('current-year').textContent = new Date().getFullYear();
