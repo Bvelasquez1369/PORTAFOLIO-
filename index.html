@@ -2,464 +2,119 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brayan Velasquez · Portafolio Profesional</title>
-    <!-- Meta tags SEO -->
-    <meta name="description" content="Portafolio profesional de Brayan Velasquez, Tecnólogo en Análisis y Desarrollo de Software. Experto en .NET, Python, análisis de datos, Power BI y desarrollo full stack.">
-    <meta name="keywords" content="Brayan Velasquez, .NET, Python, Power BI, C#, ASP.NET Core, SQL Server, SENA">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Brayan Velasquez | Arquitecto de Escalas</title>
+    <!-- Meta -->
+    <meta name="description" content="Portafolio profesional de Brayan Velasquez: desarrollador .NET, Python, IA y datos. Proyectos reales y experiencia técnica.">
+    <meta name="keywords" content="Brayan Velasquez, .NET, Python, Power BI, ASP.NET, desarrollador full stack, SENA, IA">
     <meta name="author" content="Brayan Ricardo Velasquez Davila">
-    <!-- Open Graph -->
-    <meta property="og:title" content="Brayan Velasquez · Portafolio">
+    <!-- Open -->
+    <meta property="og:title" content="Brayan Velasquez · Arquitecto de Escalas">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bvelasquez1369.github.io/portafolio/">
-    <meta property="og:image" content="assets/images/og-image.png">
+    <meta property="og:image" content="assets/images/logo.png">
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366F1'%3E%3Crect x='4' y='4' width='4' height='4' /%3E%3Crect x='16' y='4' width='4' height='4' /%3E%3Crect x='4' y='16' width='4' height='4' /%3E%3Crect x='16' y='16' width='4' height='4' /%3E%3C/svg%3E">
-    <!-- Bootstrap 5 + Google Fonts + Estilos personalizados -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Preconexiones para mejorar rendimiento -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@100..800&display=swap" rel="stylesheet">
-    <style>
-        /* ===== RESET Y VARIABLES ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        :root {
-            --negro-profundo: #0A0A0A;
-            --indigo: #6366F1;
-            --purpura: #A78BFA;
-            --gris-platino: #F5F5F5;
-            --gris-medio: #9CA3AF;
-            --gris-oscuro: #2D2D2D;
-            --font-mono: 'JetBrains Mono', monospace;
-            --font-sans: 'Inter', sans-serif;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            background-color: var(--negro-profundo);
-            color: var(--gris-platino);
-            font-family: var(--font-sans);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        /* Fondo de partículas */
-        #particles-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-        }
-        .content {
-            position: relative;
-            z-index: 10;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        /* Tipografía */
-        h1, h2, h3, .section-title, .prompt, .comando {
-            font-family: var(--font-mono);
-            font-weight: 500;
-            letter-spacing: -0.02em;
-        }
-        .titulo-principal {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        .nombre {
-            display: block;
-            font-size: clamp(2rem, 6vw, 3.5rem);
-            color: var(--indigo);
-            text-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
-        }
-        .titulo {
-            display: block;
-            font-size: clamp(1.2rem, 4vw, 2rem);
-            color: var(--purpura);
-            text-shadow: 0 0 8px rgba(167, 139, 250, 0.3);
-            margin-top: 0.5rem;
-        }
-        .eslogan {
-            text-align: center;
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 2rem auto;
-            border-left: 3px solid var(--indigo);
-            padding-left: 1.5rem;
-        }
-        .section-title {
-            font-size: clamp(1.8rem, 5vw, 2.2rem);
-            color: var(--indigo);
-            border-bottom: 2px solid var(--purpura);
-            padding-bottom: 0.5rem;
-            margin-bottom: 3rem;
-            display: inline-block;
-        }
-        /* Menú */
-        .nav-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--gris-oscuro);
-            z-index: 1000;
-        }
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo-img {
-            height: 40px;
-            width: auto;
-            filter: drop-shadow(0 0 5px var(--indigo));
-        }
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        .nav-links a {
-            color: var(--gris-platino);
-            text-decoration: none;
-            font-family: var(--font-mono);
-            font-size: 1rem;
-            padding: 0.5rem 0;
-            position: relative;
-        }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--purpura);
-            transition: width 0.3s;
-        }
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--purpura);
-        }
-        .nav-links a:hover::after, .nav-links a.active::after {
-            width: 100%;
-        }
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: var(--indigo);
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-        /* Secciones */
-        .section {
-            min-height: 100vh;
-            padding: 6rem 0 4rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        /* Botón CV */
-        .btn-cv {
-            display: inline-block;
-            background: transparent;
-            border: 2px solid var(--indigo);
-            color: var(--gris-platino);
-            padding: 0.8rem 2rem;
-            font-family: var(--font-mono);
-            text-decoration: none;
-            transition: all 0.3s;
-            margin-top: 1rem;
-        }
-        .btn-cv:hover {
-            background: var(--indigo);
-            color: var(--negro-profundo);
-            box-shadow: 0 0 20px var(--indigo);
-        }
-        /* Grid de proyectos */
-        .proyectos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .proyecto-card {
-            background: rgba(10, 10, 10, 0.7);
-            border: 1px solid var(--gris-oscuro);
-            backdrop-filter: blur(5px);
-            transition: transform 0.3s, border-color 0.3s;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            border-radius: 12px;
-        }
-        .proyecto-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--indigo);
-        }
-        .card-image {
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
-        }
-        .card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s;
-        }
-        .proyecto-card:hover .card-image img {
-            transform: scale(1.05);
-        }
-        .card-content {
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        .card-icon {
-            width: 40px;
-            height: 40px;
-            border: 1px solid currentColor;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-        .card-title {
-            font-family: var(--font-mono);
-            font-size: 1.3rem;
-            color: var(--indigo);
-            margin: 0;
-        }
-        .card-desc {
-            color: var(--gris-medio);
-            font-size: 0.95rem;
-        }
-        .card-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        .tech-tag {
-            border: 1px solid var(--gris-oscuro);
-            padding: 0.2rem 0.8rem;
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            background: rgba(45, 45, 45, 0.5);
-            color: var(--gris-medio);
-        }
-        .card-link {
-            text-decoration: none;
-            border: 1px solid var(--purpura);
-            padding: 0.5rem 1rem;
-            font-family: var(--font-mono);
-            font-size: 0.9rem;
-            color: var(--purpura);
-            align-self: flex-start;
-            transition: all 0.3s;
-        }
-        .card-link:hover {
-            background: var(--purpura);
-            color: var(--negro-profundo);
-        }
-        /* Habilidades, certificaciones, experiencia (estilos ya existentes) */
-        .habilidades-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .habilidad-categoria {
-            background: rgba(10, 10, 10, 0.6);
-            border: 1px solid var(--gris-oscuro);
-            padding: 1.5rem;
-            backdrop-filter: blur(5px);
-        }
-        .habilidad-categoria h3 {
-            color: var(--indigo);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-            border-bottom: 1px dashed var(--purpura);
-        }
-        .habilidad-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-        }
-        .habilidad-tag {
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid var(--indigo);
-            color: var(--gris-platino);
-            padding: 0.4rem 1rem;
-            font-size: 0.9rem;
-            transition: 0.2s;
-        }
-        .certificaciones-grid, .experiencia-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            background: rgba(10, 10, 10, 0.6);
-            border: 1px solid var(--gris-oscuro);
-            padding: 2rem;
-        }
-        .cert-categoria li, .exp-logros li {
-            margin-bottom: 0.6rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-        .cert-categoria li::before, .exp-logros li::before {
-            content: "▹";
-            color: var(--purpura);
-            position: absolute;
-            left: 0;
-        }
-        .exp-header {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            border-bottom: 1px dashed var(--gris-oscuro);
-            padding-bottom: 0.5rem;
-        }
-        .exp-fecha {
-            font-family: var(--font-mono);
-            font-size: 0.9rem;
-            color: var(--purpura);
-            border: 1px solid var(--purpura);
-            padding: 0.2rem 0.8rem;
-            border-radius: 20px;
-        }
-        .exp-cargo {
-            font-size: 1.2rem;
-            color: var(--indigo);
-        }
-        .terminal {
-            background: rgba(10, 10, 10, 0.8);
-            border: 1px solid var(--gris-oscuro);
-            padding: 1.5rem;
-            font-family: var(--font-mono);
-            margin: 2rem 0;
-        }
-        .prompt { color: var(--indigo); }
-        .comando { color: var(--purpura); }
-        .respuesta { color: var(--gris-medio); margin-top: 0.5rem; }
-        .enlaces {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .enlaces a {
-            color: var(--gris-platino);
-            border: 1px solid var(--gris-oscuro);
-            padding: 0.5rem 1.5rem;
-            transition: 0.3s;
-            text-decoration: none;
-        }
-        .enlaces a:hover {
-            background: var(--indigo);
-            color: var(--negro-profundo);
-        }
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                background: rgba(10, 10, 10, 0.98);
-                flex-direction: column;
-                align-items: center;
-                transition: 0.3s;
-                gap: 2rem;
-                padding: 2rem;
-            }
-            .nav-links.active { left: 0; }
-            .hamburger { display: flex; }
-            .btn-cv { display: none; }
-            .btn-cv-movil { display: inline-block; }
-        }
-    </style>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <!-- Bootstrap 5 + Google Fonts + Font Awesome + Estilos personalizados -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=JetBrains+Mono:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+    <!-- Cursor personalizado -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Fondo de partículas -->
     <canvas id="particles-canvas"></canvas>
+
     <main class="content">
+        <!-- Menú de navegación -->
         <nav class="nav-menu">
             <div class="nav-container">
                 <div class="logo">
-                    <img src="assets\images\Gemini_Generated_Image_ymh2n1ymh2n1ymh2.png" alt="Logo" class="logo-img">
+                    <img src="assets/images/icono.png" alt="Logo" class="logo-img" width="40" height="40">
                 </div>
                 <ul class="nav-links">
                     <li><a href="#inicio" class="active">Inicio</a></li>
                     <li><a href="#proyectos">Proyectos</a></li>
                     <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#herramientas">Herramientas</a></li>
                     <li><a href="#certificaciones">Certificaciones</a></li>
                     <li><a href="#experiencia">Experiencia</a></li>
-                    <li><a href="#acerca">Acerca de mí</a></li>
+                    <li><a href="#acerca">Acerca</a></li>
                     <li><a href="#reflexion">Reflexión</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
-                <div class="hamburger"><span></span><span></span><span></span></div>
+                <div class="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
             </div>
         </nav>
 
-        <!-- INICIO -->
+        <!-- Inicio con foto personal y efecto typing -->
         <section id="inicio" class="section inicio">
             <div class="inicio-contenido">
+                <!-- Foto de perfil -->
+                <div class="foto-perfil">
+                    <img src="assets/images/foto-perfil.jpg" alt="Brayan Velasquez - Arquitecto de Escalas" class="foto-personal" width="180" height="180" fetchpriority="high">
+                </div>
                 <h1 class="titulo-principal">
                     <span class="nombre">BRAYAN RICARDO VELASQUEZ DAVILA</span>
-                    <span class="titulo">ARQUITECTO DE ESCALAS</span>
+                    <span class="titulo typed" id="typed-title"></span>
                 </h1>
-                <p class="eslogan">Ingeniería de precisión desde el análisis de datos hasta la arquitectura de software.<br><span class="resaltado">.NET · Python · Power BI · SQL Server · IA</span></p>
-                <a href="assets/pdfs/CV-Brayan_Velasquez.pdf" download class="btn-cv">📄 Descargar CV</a>
+                <p class="eslogan">
+                    Ingeniería de precisión desde el análisis de datos hasta la arquitectura de software.<br>
+                    <span class="resaltado">.NET · Python · Power BI · SQL Server · IA</span>
+                </p>
+                <div class="iconos-pilares">
+                    <div class="pilar-icono icono-nano" title="Nanoingeniería"></div>
+                    <div class="pilar-icono icono-bio" title="Bioingeniería"></div>
+                    <div class="pilar-icono icono-datos" title="Ciencia de Datos"></div>
+                    <div class="pilar-icono icono-blockchain" title="Blockchain"></div>
+                </div>
+                <a href="assets/pdfs/cv_brayan_ricardo_velasquez_davila.pdf" download class="btn-cv" aria-label="Descargar currículum">📄 Descargar CV</a>
             </div>
         </section>
 
-        <!-- PROYECTOS (5 seleccionados) -->
+        <!-- Proyectos -->
         <section id="proyectos" class="section proyectos">
             <h2 class="section-title">Proyectos Destacados</h2>
             <div class="proyectos-grid" id="proyectos-container"></div>
         </section>
 
-        <!-- HABILIDADES -->
+        <!-- Habilidades Técnicas -->
         <section id="habilidades" class="section habilidades">
             <h2 class="section-title">Stack Tecnológico</h2>
             <div class="habilidades-grid">
                 <div class="habilidad-categoria"><h3>Backend .NET</h3><div class="habilidad-items"><span class="habilidad-tag">C#</span><span class="habilidad-tag">ASP.NET Core MVC</span><span class="habilidad-tag">Web API</span><span class="habilidad-tag">Entity Framework</span><span class="habilidad-tag">LINQ</span></div></div>
-                <div class="habilidad-categoria"><h3>Backend Python</h3><div class="habilidad-items"><span class="habilidad-tag">Python</span><span class="habilidad-tag">Flask</span><span class="habilidad-tag">Java (OOP)</span><span class="habilidad-tag">PHP</span></div></div>
-                <div class="habilidad-categoria"><h3>Frontend</h3><div class="habilidad-items"><span class="habilidad-tag">HTML5</span><span class="habilidad-tag">CSS3</span><span class="habilidad-tag">JavaScript</span><span class="habilidad-tag">Bootstrap</span><span class="habilidad-tag">jQuery</span></div></div>
-                <div class="habilidad-categoria"><h3>Bases de Datos SQL</h3><div class="habilidad-items"><span class="habilidad-tag">SQL Server</span><span class="habilidad-tag">T-SQL</span><span class="habilidad-tag">MySQL</span><span class="habilidad-tag">PostgreSQL</span></div></div>
-                <div class="habilidad-categoria"><h3>Analítica & BI</h3><div class="habilidad-items"><span class="habilidad-tag">Power BI</span><span class="habilidad-tag">Pandas/NumPy</span><span class="habilidad-tag">Excel Avanzado</span></div></div>
+                <div class="habilidad-categoria"><h3>Backend Python</h3><div class="habilidad-items"><span class="habilidad-tag">Python</span><span class="habilidad-tag">Flask</span><span class="habilidad-tag">Java</span><span class="habilidad-tag">PHP</span></div></div>
+                <div class="habilidad-categoria"><h3>Frontend</h3><div class="habilidad-items"><span class="habilidad-tag">HTML5</span><span class="habilidad-tag">CSS3</span><span class="habilidad-tag">JavaScript</span><span class="habilidad-tag">Bootstrap 5</span><span class="habilidad-tag">jQuery</span></div></div>
+                <div class="habilidad-categoria"><h3>Bases de Datos SQL</h3><div class="habilidad-items"><span class="habilidad-tag">SQL Server</span><span class="habilidad-tag">T-SQL</span><span class="habilidad-tag">MySQL</span><span class="habilidad-tag">PostgreSQL</span><span class="habilidad-tag">SQLite</span></div></div>
+                <div class="habilidad-categoria"><h3>Analítica & BI</h3><div class="habilidad-items"><span class="habilidad-tag">Power BI</span><span class="habilidad-tag">Pandas/NumPy</span><span class="habilidad-tag">Matplotlib</span><span class="habilidad-tag">Excel Avanzado</span></div></div>
                 <div class="habilidad-categoria"><h3>Machine Learning / IA</h3><div class="habilidad-items"><span class="habilidad-tag">TensorFlow</span><span class="habilidad-tag">Keras</span><span class="habilidad-tag">Scikit-learn</span></div></div>
-                <div class="habilidad-categoria"><h3>Herramientas & DevOps</h3><div class="habilidad-items"><span class="habilidad-tag">Git/GitHub</span><span class="habilidad-tag">Azure</span><span class="habilidad-tag">Render</span><span class="habilidad-tag">Docker</span></div></div>
+                <div class="habilidad-categoria"><h3>Herramientas & DevOps</h3><div class="habilidad-items"><span class="habilidad-tag">Git/GitHub</span><span class="habilidad-tag">Azure</span><span class="habilidad-tag">Render</span><span class="habilidad-tag">Firebase</span><span class="habilidad-tag">Docker</span></div></div>
             </div>
             <p class="nota-formacion mt-4 text-center">Tecnólogo en Análisis y Desarrollo de Software · SENA (2024 – actualidad)</p>
         </section>
 
-        <!-- CERTIFICACIONES -->
+        <!-- Herramientas (sección completa sin cambios) -->
+        <section id="herramientas" class="section herramientas">
+            <h2 class="section-title">Algunas de las herramientas que utilizo</h2>
+            <div class="herramientas-grid">
+            </div>
+        </section>
+
+        <!-- Certificaciones -->
         <section id="certificaciones" class="section certificaciones">
-            <h2 class="section-title">Certificaciones y Formación</h2>
+            <h2 class="section-title">Certificaciones</h2>
             <div class="certificaciones-grid">
                 <div class="cert-categoria"><h3>💻 Tecnología y Datos</h3><ul><li>Bootcamp IA (159h) – Ministerio TIC, 2026</li><li>Power BI – Santander Open Academy, 2025</li><li>Análisis exploratorio con Python – SENA, 2024</li><li>Calidad del software – SENA, 2024</li></ul></div>
                 <div class="cert-categoria"><h3>📈 Marketing Digital</h3><ul><li>Marketing automation – Santander, 2025</li><li>SEO y Content Marketing – Santander, 2025</li><li>Google Ads – CCB, 2025</li></ul></div>
@@ -468,7 +123,7 @@
             <p class="text-center mt-3">Idiomas: Español (nativo) · Inglés (básico-intermedio)</p>
         </section>
 
-        <!-- EXPERIENCIA -->
+        <!-- Experiencia Laboral -->
         <section id="experiencia" class="section experiencia">
             <h2 class="section-title">Trayectoria Profesional</h2>
             <div class="experiencia-grid">
@@ -479,17 +134,17 @@
             </div>
         </section>
 
-        <!-- ACERCA DE MÍ (nuevo, más directo) -->
+        <!-- Acerca de mí -->
         <section id="acerca" class="section manifiesto">
             <h2 class="section-title">Acerca de mí</h2>
             <div class="manifiesto-contenido">
-                <p>Soy un apasionado por la tecnología con una trayectoria atípica: comencé en el servicio al cliente y las operaciones, donde desarrollé un pensamiento analítico agudo y resiliencia. Decidí formalizar mi pasión estudiando Análisis y Desarrollo de Software en el SENA, y complementé con un bootcamp de Inteligencia Artificial. Mi enfoque combina la disciplina militar, la experiencia en resolución de crisis y la creatividad técnica para construir software que resuelva problemas reales.</p>
+                <p>Soy un apasionado por la tecnología con una trayectoria atípica: comencé en el servicio al cliente y las operaciones, donde desarrollé un pensamiento analítico agudo y resiliencia. Decidí formalizar mi pasión estudiando <strong>Análisis y Desarrollo de Software</strong> en el SENA, y complementé con un bootcamp de Inteligencia Artificial. Mi enfoque combina la disciplina militar, la experiencia en resolución de crisis y la creatividad técnica para construir software que resuelva problemas reales.</p>
                 <p>Creo firmemente en el aprendizaje continuo y en la convergencia de disciplinas: datos, software, biología y física. Mi objetivo es convertirme en un arquitecto de soluciones que trascienda lo convencional.</p>
                 <p><strong>Manifiesto:</strong> “No soy un desarrollador. Soy un traductor de escalas”.</p>
             </div>
         </section>
 
-        <!-- REFLEXIÓN (paso 9) -->
+        <!-- Reflexión Personal -->
         <section id="reflexion" class="section">
             <h2 class="section-title">Reflexión de mi camino como desarrollador</h2>
             <div class="manifiesto-contenido">
@@ -500,181 +155,47 @@
             </div>
         </section>
 
-        <!-- CONTACTO -->
+        <!-- Contacto + Terminal Interactivo -->
         <section id="contacto" class="section contacto">
             <h2 class="section-title">Contacto</h2>
-            <div class="terminal"><span class="prompt">brayan@scale-architect:~$</span><span class="comando">status --disponible</span><span class="respuesta">>> online · abierto a oportunidades</span></div>
+            <div class="terminal">
+                <div class="terminal-header">
+                    <span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span>
+                    <span class="terminal-title">brayan@scale-architect:~/contacto</span>
+                </div>
+                <div class="terminal-body">
+                    <span class="prompt">brayan@scale-architect:~$</span>
+                    <span class="comando">status --disponible</span>
+                    <div class="respuesta-linea">
+                        <span class="respuesta-prefix">>></span>
+                        <span class="respuesta" id="terminal-text">online · abierto a oportunidades</span>
+                        <span class="cursor-blink">_</span>
+                    </div>
+                </div>
+            </div>
             <div class="enlaces">
-                <a href="https://www.linkedin.com/in/brayan-velasquez-24a114226/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/Bvelasquez1369" target="_blank">GitHub</a>
-                <a href="mailto:brayanvelasquez728@gmail.com">Email</a>
-                <a href="assets/pdfs/CV-Brayan_Velasquez.pdf" download class="btn-cv-movil">📄 CV</a>
+                <a href="https://www.linkedin.com/in/brayan-ricardo-velasquez-davila-24a114226/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                </a>
+                <a href="https://github.com/Bvelasquez1369" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="mailto:brayanvelasquez728@gmail.com" aria-label="Correo electrónico">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+                <a href="assets/pdfs/cv_brayan_ricardo_velasquez_davila.pdf" download class="btn-cv-movil" aria-label="Descargar CV">
+                    <i class="fas fa-download"></i> CV
+                </a>
             </div>
             <p class="text-center mt-4 small">Bootcamp IA · 159h · Ministerio TIC 2026</p>
         </section>
+
+        <footer class="footer">
+            <p>© <span id="current-year"></span> Brayan Ricardo Velasquez Davila · Arquitecto de Escalas</p>
+            <p class="lema">“De la adversidad al algoritmo: construyendo puentes entre datos, código y propósito”</p>
+        </footer>
     </main>
 
-    <script>
-        // Partículas (versión optimizada)
-        (function() {
-            const isMobile = /Android|webOS|iPhone|iPad|iPod/i.test(navigator.userAgent);
-            const canvas = document.getElementById('particles-canvas');
-            const ctx = canvas.getContext('2d');
-            let width, height, particles = [];
-            let mouse = { x: null, y: null, radius: isMobile ? 0 : 150 };
-            function resize() {
-                width = window.innerWidth;
-                height = window.innerHeight;
-                canvas.width = width;
-                canvas.height = height;
-                init();
-            }
-            class Particle {
-                constructor(x,y) {
-                    this.x = x; this.y = y; this.baseX = x; this.baseY = y;
-                    this.size = Math.random() * 2 + 0.5;
-                    this.density = Math.random() * 20 + 10;
-                    this.color = Math.random() > 0.5 ? '#6366F1' : '#A78BFA';
-                }
-                draw() {
-                    ctx.fillStyle = this.color;
-                    ctx.shadowColor = this.color;
-                    ctx.shadowBlur = 10;
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI*2);
-                    ctx.fill();
-                }
-                update() {
-                    if (!isMobile && mouse.x && mouse.y) {
-                        let dx = mouse.x - this.x, dy = mouse.y - this.y;
-                        let dist = Math.sqrt(dx*dx + dy*dy);
-                        if (dist < mouse.radius) {
-                            let force = (mouse.radius - dist)/mouse.radius;
-                            let angle = Math.atan2(dy,dx);
-                            this.x -= Math.cos(angle)*force*this.density*0.6;
-                            this.y -= Math.sin(angle)*force*this.density*0.6;
-                        } else { this.x += (this.baseX-this.x)*0.02; this.y += (this.baseY-this.y)*0.02; }
-                    } else { this.x += (this.baseX-this.x)*0.02; this.y += (this.baseY-this.y)*0.02; }
-                }
-            }
-            function init() {
-                particles = [];
-                let factor = isMobile ? 15000 : 9000;
-                let num = Math.floor((width*height)/factor);
-                for(let i=0;i<num;i++) particles.push(new Particle(Math.random()*width, Math.random()*height));
-            }
-            function drawLines() {
-                if(isMobile) return;
-                for(let a=0;a<particles.length;a++) {
-                    for(let b=a;b<particles.length;b++) {
-                        let dx = particles[a].x - particles[b].x;
-                        let dy = particles[a].y - particles[b].y;
-                        let dist = Math.sqrt(dx*dx+dy*dy);
-                        if(dist<100) {
-                            ctx.beginPath();
-                            ctx.strokeStyle = `rgba(99,102,241,${0.15*(1-dist/100)})`;
-                            ctx.lineWidth = 0.5;
-                            ctx.moveTo(particles[a].x, particles[a].y);
-                            ctx.lineTo(particles[b].x, particles[b].y);
-                            ctx.stroke();
-                        }
-                    }
-                }
-            }
-            function animate() {
-                ctx.clearRect(0,0,width,height);
-                drawLines();
-                particles.forEach(p => { p.update(); p.draw(); });
-                requestAnimationFrame(animate);
-            }
-            if(!isMobile) window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
-            window.addEventListener('resize', resize);
-            resize();
-            animate();
-        })();
-
-        // Menú hamburguesa
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        hamburger?.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Proyectos (5 proyectos curados con descripciones detalladas)
-        const proyectos = [
-            {
-                titulo: "LUMI STORE - E-commerce de Lujo",
-                descripcion: "Plataforma completa para joyería y perfumería. Implementé autenticación, carrito de compras, pasarela PayPal y panel administrativo. Desafío: integración de pagos y despliegue en Azure. Rol: desarrollador full stack.",
-                tecnologias: ["C#", "ASP.NET Core MVC", "SQL Server", "Azure", "PayPal"],
-                icono: "icono-code",
-                imagen: "assets/images/lumi-home.png",
-                url: "https://lumi-tienda-fqb0hhe5hna0fqd7.canadacentral-01.azurewebsites.net"
-            },
-            {
-                titulo: "SGI - Gestión de Inventario con IA Predictiva",
-                descripcion: "Aplicación web para control de stock y predicción de demanda usando regresión lineal. Desplegada en Render con Flask y PostgreSQL. Rol: creador del modelo y backend. Desafío: integrar scikit-learn con Flask.",
-                tecnologias: ["Python", "Flask", "PostgreSQL", "Scikit-learn"],
-                icono: "icono-datos",
-                imagen: "assets/images/sgi.png",
-                url: "https://sig-6cr9.onrender.com"
-            },
-            {
-                titulo: "Predicción de Trends con IA (TikTok)",
-                descripcion: "Análisis de datos de TikTok para predecir tendencias musicales usando redes neuronales (TensorFlow/Keras). Rol: científico de datos. Desafío: limpieza de datos y entrenamiento del modelo.",
-                tecnologias: ["Python", "TensorFlow", "Keras", "Pandas"],
-                icono: "icono-datos",
-                imagen: "assets/images/ia-trends.png",
-                url: "https://github.com/Bvelasquez1369/tiktok-trends-ia"  // Reemplaza con tu repo real
-            },
-            {
-                titulo: "API REST de Gestión de Tareas",
-                descripcion: "API CRUD con ASP.NET Core Web API, DTOs, y pruebas con Postman. Consumo desde jQuery/AJAX. Rol: backend developer. Desafío: implementar validaciones y documentación Swagger.",
-                tecnologias: ["C#", "ASP.NET Core Web API", "Postman", "jQuery"],
-                icono: "icono-code",
-                imagen: "assets/images/api-tareas.png",
-                url: "https://github.com/Bvelasquez1369/tasks-api"
-            },
-            {
-                titulo: "Dashboard de KPIs Operativos (Power BI)",
-                descripcion: "Panel interactivo para seguimiento de KPIs a partir de datos de Excel. Rol: analista de datos. Desafío: transformación de datos y diseño visual efectivo.",
-                tecnologias: ["Power BI", "DAX", "Excel"],
-                icono: "icono-datos",
-                imagen: "assets/images/dashboard-kpi.png",
-                url: "https://github.com/Bvelasquez1369/dashboard-kpi"
-            }
-        ];
-
-        function cargarProyectos() {
-            const container = document.getElementById('proyectos-container');
-            if(!container) return;
-            container.innerHTML = proyectos.map(proj => `
-                <div class="proyecto-card">
-                    <div class="card-image"><img src="${proj.imagen}" alt="${proj.titulo}" loading="lazy"></div>
-                    <div class="card-content">
-                        <div class="card-header"><div class="card-icon ${proj.icono}"></div><h3 class="card-title">${proj.titulo}</h3></div>
-                        <p class="card-desc">${proj.descripcion}</p>
-                        <div class="card-tech">${proj.tecnologias.map(t => `<span class="tech-tag">${t}</span>`).join('')}</div>
-                        <a href="${proj.url}" target="_blank" class="card-link">Ver proyecto →</a>
-                    </div>
-                </div>
-            `).join('');
-        }
-        cargarProyectos();
-
-        // Terminal dinámica
-        const estados = ["online · abierto a oportunidades", "explorando .NET 8 y Azure", "bootcamp IA completado", "disponible para colaboraciones"];
-        let idx = 0;
-        setInterval(() => {
-            const resp = document.querySelector('.respuesta');
-            if(resp) { idx = (idx+1)%estados.length; resp.textContent = `>> ${estados[idx]}`; }
-        }, 5000);
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
