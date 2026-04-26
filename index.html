@@ -3,24 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Brayan Velasquez | Arquitecto de Escalas</title>
-    <!-- Meta -->
+    <title>Arquitecto de Escalas</title>
     <meta name="description" content="Portafolio profesional de Brayan Velasquez: desarrollador .NET, Python, IA y datos. Proyectos reales y experiencia técnica.">
     <meta name="keywords" content="Brayan Velasquez, .NET, Python, Power BI, ASP.NET, desarrollador full stack, SENA, IA">
     <meta name="author" content="Brayan Ricardo Velasquez Davila">
-    <!-- Open Graph -->
     <meta property="og:title" content="Brayan Velasquez · Arquitecto de Escalas">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bvelasquez1369.github.io/portafolio/">
     <meta property="og:image" content="assets/images/logo.png">
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366F1'%3E%3Crect x='4' y='4' width='4' height='4' /%3E%3Crect x='16' y='4' width='4' height='4' /%3E%3Crect x='4' y='16' width='4' height='4' /%3E%3Crect x='16' y='16' width='4' height='4' /%3E%3C/svg%3E">
-    <!-- Preconexiones -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <!-- Bootstrap 5 + Google Fonts + Font Awesome + Estilos -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=JetBrains+Mono:wght@100..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -28,53 +23,42 @@
 </head>
 <body>
 
-    <!-- Cursor personalizado -->
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
-
-    <!-- Fondo de partículas -->
     <canvas id="particles-canvas"></canvas>
 
-    <main class="content">
-        <!-- Menú de navegación -->
-        <nav class="nav-menu">
-            <div class="nav-container">
-                <div class="logo">
-                    <img src="assets/images/icono.png" alt="Logo" class="logo-img" width="40" height="40" loading="lazy">
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#inicio" class="active">Inicio</a></li>
-                    <li><a href="#proyectos">Proyectos</a></li>
-                    <li><a href="#habilidades">Habilidades</a></li>
-                    <li><a href="#herramientas">Herramientas</a></li>
-                    <li><a href="#certificaciones">Certificaciones</a></li>
-                    <li><a href="#experiencia">Experiencia</a></li>
-                    <li><a href="#acerca">Acerca</a></li>
-                    <li><a href="#reflexion">Reflexión</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span></span><span></span><span></span>
-                </div>
-            </div>
-        </nav>
+    <div id="back-to-top" class="back-to-top"><i class="fas fa-arrow-up"></i></div>
 
-        <!-- Inicio con foto personal -->
+    <header class="app-header">
+        <div class="container-fluid">
+            <div class="app-header-content">
+                <img src="assets/images/icono.png" alt="Logo" class="app-logo" width="40" height="40">
+                <button class="menu-toggle" id="menuToggle" aria-label="Menú"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <div id="drawer" class="drawer">
+        <div class="drawer-header">
+            <h3>Brayan Velasquez</h3>
+            <button id="closeDrawer" class="close-drawer"><i class="fas fa-times"></i></button>
+        </div>
+        <nav class="drawer-nav">
+            <a href="#inicio" class="drawer-link active"><i class="fas fa-home"></i> Inicio</a>
+            <a href="#proyectos" class="drawer-link"><i class="fas fa-code-branch"></i> Proyectos</a>
+            <a href="#herramientas" class="drawer-link"><i class="fas fa-tools"></i> Herramientas</a>
+            <a href="#certificaciones" class="drawer-link"><i class="fas fa-certificate"></i> Certificaciones</a>
+            <a href="#artifice" class="drawer-link"><i class="fas fa-brain"></i> Artífice</a>
+            <a href="#contacto" class="drawer-link"><i class="fas fa-envelope"></i> Contacto</a>
+        </nav>
+    </div>
+
+    <main class="content">
         <section id="inicio" class="section inicio">
             <div class="inicio-contenido">
-                <div class="foto-perfil-grande">
-                    <div class="foto-card-grande">
-                        <img src="assets/images/Perfil.png" alt="Brayan Velasquez - Arquitecto de Escalas" class="foto-personal-grande" width="300" height="600" fetchpriority="high">
-                    </div>
-                </div>
-                <h1 class="titulo-principal">
-                    <span class="nombre">BRAYAN RICARDO VELASQUEZ DAVILA</span>
-                    <span class="titulo typed" id="typed-title"></span>
-                </h1>
-                <p class="eslogan">
-                    Ingeniería de precisión desde el análisis de datos hasta la arquitectura de software.<br>
-                    <span class="resaltado">.NET · Python · Power BI · SQL Server · IA</span>
-                </p>
+                <div class="foto-perfil-grande"><div class="foto-card-grande"><img src="assets/images/Perfil.png" alt="Brayan Velasquez - Arquitecto de Escalas" class="foto-personal-grande" width="300" height="600" fetchpriority="high"></div></div>
+                <h1 class="titulo-principal"><span class="nombre">BRAYAN RICARDO VELASQUEZ DAVILA</span><span class="titulo typed" id="typed-title"></span></h1>
+                <p class="eslogan">Ingeniería de precisión desde el análisis de datos hasta la arquitectura de software.<br><span class="resaltado">.NET · Python · Power BI · SQL Server · IA</span></p>
                 <div class="iconos-pilares">
                     <div class="pilar-icono icono-nano" title="Nanoingeniería"></div>
                     <div class="pilar-icono icono-bio" title="Bioingeniería"></div>
@@ -85,238 +69,86 @@
             </div>
         </section>
 
-        <!-- Proyectos -->
         <section id="proyectos" class="section proyectos">
             <h2 class="section-title">Proyectos Destacados</h2>
             <div class="proyectos-grid" id="proyectos-container"></div>
         </section>
 
-        <!-- Habilidades Técnicas -->
-        <section id="habilidades" class="section habilidades">
-            <h2 class="section-title">Stack Tecnológico</h2>
-            <div class="habilidades-grid">
-                <div class="habilidad-categoria"><h3>Backend .NET</h3><div class="habilidad-items"><span class="habilidad-tag">C#</span><span class="habilidad-tag">ASP.NET Core MVC</span><span class="habilidad-tag">Web API</span><span class="habilidad-tag">Entity Framework</span><span class="habilidad-tag">LINQ</span></div></div>
-                <div class="habilidad-categoria"><h3>Backend Python</h3><div class="habilidad-items"><span class="habilidad-tag">Python</span><span class="habilidad-tag">Flask</span><span class="habilidad-tag">Java</span><span class="habilidad-tag">PHP</span></div></div>
-                <div class="habilidad-categoria"><h3>Frontend</h3><div class="habilidad-items"><span class="habilidad-tag">HTML5</span><span class="habilidad-tag">CSS3</span><span class="habilidad-tag">JavaScript</span><span class="habilidad-tag">Bootstrap 5</span><span class="habilidad-tag">jQuery</span></div></div>
-                <div class="habilidad-categoria"><h3>Bases de Datos SQL</h3><div class="habilidad-items"><span class="habilidad-tag">SQL Server</span><span class="habilidad-tag">T-SQL</span><span class="habilidad-tag">MySQL</span><span class="habilidad-tag">PostgreSQL</span><span class="habilidad-tag">SQLite</span></div></div>
-                <div class="habilidad-categoria"><h3>Analítica & BI</h3><div class="habilidad-items"><span class="habilidad-tag">Power BI</span><span class="habilidad-tag">Pandas/NumPy</span><span class="habilidad-tag">Matplotlib</span><span class="habilidad-tag">Excel Avanzado</span></div></div>
-                <div class="habilidad-categoria"><h3>Machine Learning / IA</h3><div class="habilidad-items"><span class="habilidad-tag">TensorFlow</span><span class="habilidad-tag">Keras</span><span class="habilidad-tag">Scikit-learn</span></div></div>
-                <div class="habilidad-categoria"><h3>Herramientas & DevOps</h3><div class="habilidad-items"><span class="habilidad-tag">Git/GitHub</span><span class="habilidad-tag">Azure</span><span class="habilidad-tag">Render</span><span class="habilidad-tag">Firebase</span><span class="habilidad-tag">Docker</span></div></div>
-            </div>
-            <p class="nota-formacion mt-4 text-center">Tecnólogo en Análisis y Desarrollo de Software · SENA (2024 – actualidad)</p>
-        </section>
-
-        <!-- HERRAMIENTAS -->
         <section id="herramientas" class="section herramientas">
             <h2 class="section-title">Algunas de las herramientas que utilizo</h2>
             <div class="herramientas-grid">
-
-                <!--Diseño UX/UI & Prototipado -->
-                <div class="herramienta-categoria">
-                    <h3><i class="fas fa-paint-brush"></i> Diseño UX/UI & Prototipado</h3>
-                    <div class="herramienta-items">
-                        <span class="herramienta-tag"><i class="fab fa-figma"></i> Figma</span>
-                        <span class="herramienta-tag"><i class="fab fa-adobe"></i> Adobe XD</span>
-                        <span class="herramienta-tag"><i class="fas fa-brain"></i> Miro</span>
-                        <span class="herramienta-tag"><i class="fas fa-cube"></i> Tinkercad</span>
-                        <span class="herramienta-tag"><i class="fas fa-chalkboard"></i> Draw.io</span>
-                        <span class="herramienta-tag"><i class="fas fa-project-diagram"></i> Bizagi</span>
-                        <span class="herramienta-tag"><i class="fas fa-building"></i> ArchiMate</span>
-                        <span class="herramienta-tag"><i class="fab fa-adobe"></i> Adobe Express</span>
-                    </div>
-                </div>
-
-                <!--IDEs y Editores -->
-                <div class="herramienta-categoria">
-                    <h3><i class="fas fa-code"></i> IDEs y Editores</h3>
-                    <div class="herramienta-items">
-                        <span class="herramienta-tag"><i class="fab fa-microsoft"></i> Visual Studio</span>
-                        <span class="herramienta-tag"><i class="fas fa-code"></i> VS Code</span>
-                        <span class="herramienta-tag"><i class="fab fa-java"></i> NetBeans</span>
-                        <span class="herramienta-tag"><i class="fab fa-java"></i> IntelliJ IDEA</span>
-                        <span class="herramienta-tag"><i class="fas fa-database"></i> MySQL Workbench</span>
-                        <span class="herramienta-tag"><i class="fas fa-server"></i> SQL Server SSMS</span>
-                        <span class="herramienta-tag"><i class="fas fa-terminal"></i> phpMyAdmin</span>
-                        <span class="herramienta-tag"><i class="fas fa-database"></i> SQLite (DB Browser)</span>
-                        <span class="herramienta-tag"><i class="fas fa-flask"></i> Jupyter Notebook</span>
-                        <span class="herramienta-tag"><i class="fas fa-cloud-upload-alt"></i> Google Colab</span>
-                    </div>
-                </div>
-
-                <!-- Bases de Datos & Modelado -->
-                <div class="herramienta-categoria">
-                    <h3><i class="fas fa-database"></i> Bases de Datos & Modelado</h3>
-                    <div class="herramienta-items">
-                        <span class="herramienta-tag"><i class="fas fa-database"></i> SQL Server</span>
-                        <span class="herramienta-tag"><i class="fas fa-leaf"></i> MongoDB</span>
-                        <span class="herramienta-tag"><i class="fas fa-database"></i> MySQL</span>
-                        <span class="herramienta-tag"><i class="fas fa-table"></i> MySQL Yog</span>
-                        <span class="herramienta-tag"><i class="fas fa-cloud-upload-alt"></i> NoSQL</span>
-                        <span class="herramienta-tag"><i class="fas fa-database"></i> PostgreSQL</span>
-                        <span class="herramienta-tag"><i class="fas fa-database"></i> SQLite</span>
-                        <span class="herramienta-tag"><i class="fas fa-fire"></i> Firebase</span>
-                        <span class="herramienta-tag"><i class="fas fa-server"></i> XAMPP</span>
-                    </div>
-                </div>
-
-                <!--Ciencia de Datos e IA -->
-                <div class="herramienta-categoria">
-                    <h3><i class="fas fa-chart-line"></i> Ciencia de Datos e IA</h3>
-                    <div class="herramienta-items">
-                        <span class="herramienta-tag"><i class="fab fa-python"></i> Python</span>
-                        <span class="herramienta-tag"><i class="fas fa-calculator"></i> NumPy</span>
-                        <span class="herramienta-tag"><i class="fas fa-table"></i> Pandas</span>
-                        <span class="herramienta-tag"><i class="fas fa-chart-bar"></i> Matplotlib</span>
-                        <span class="herramienta-tag"><i class="fas fa-chart-line"></i> Seaborn</span>
-                        <span class="herramienta-tag"><i class="fas fa-brain"></i> Scikit-learn</span>
-                        <span class="herramienta-tag"><i class="fab fa-python"></i> TensorFlow</span>
-                        <span class="herramienta-tag"><i class="fas fa-microchip"></i> PyTorch</span>
-                        <span class="herramienta-tag"><i class="fas fa-microchip"></i> Keras</span>
-                    </div>
-                </div>
-
-                <!--Desarrollo Frontend -->
-                <div class="herramienta-categoria">
-                    <h3><i class="fas fa-laptop-code"></i> Desarrollo Frontend</h3>
-                    <div class="herramienta-items">
-                        <span class="herramienta-tag"><i class="fab fa-html5"></i> HTML5</span>
-                        <span class="herramienta-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
-                        <span class="herramienta-tag"><i class="fab fa-js"></i> JavaScript</span>
-                        <span class="herramienta-tag"><i class="fab fa-bootstrap"></i> Bootstrap</span>
-                        <span class="herramienta-tag"><i class="fas fa-database"></i> LocalStorage</span>
-                    </div>
-                </div>
-
-                <!-- 6. Gestión de Proyectos y Metodologías (nueva categoría) -->
-                <div class="herramienta-categoria">
-                    <h3><i class="fas fa-tasks"></i> Gestión & Metodologías</h3>
-                    <div class="herramienta-items">
-                        <span class="herramienta-tag"><i class="fab fa-trello"></i> Trello</span>
-                        <span class="herramienta-tag"><i class="fab fa-jira"></i> Jira</span>
-                        <span class="herramienta-tag"><i class="fas fa-chalkboard-user"></i> Scrum</span>
-                    </div>
-                </div>
-
-                <!-- 7. Herramientas & DevOps (ampliada) -->
-                <div class="herramienta-categoria">
-                    <h3><i class="fas fa-cloud-upload-alt"></i> Despliegue & DevOps</h3>
-                    <div class="herramienta-items">
-                        <span class="herramienta-tag"><i class="fas fa-cloud"></i> Render</span>
-                        <span class="herramienta-tag"><i class="fas fa-vial"></i> Postman</span>
-                        <span class="herramienta-tag"><i class="fas fa-mobile-alt"></i> Vysor</span>
-                        <span class="herramienta-tag"><i class="fab fa-microsoft"></i> Azure</span>
-                        <span class="herramienta-tag"><i class="fab fa-google"></i> Google Ads</span>
-                        <span class="herramienta-tag"><i class="fas fa-chalkboard"></i> Flask</span>
-                        <span class="herramienta-tag"><i class="fab fa-git-alt"></i> Git/GitHub</span>
-                        <span class="herramienta-tag"><i class="fab fa-docker"></i> Docker</span>
-                        <span class="herramienta-tag"><i class="fas fa-envelope-open-text"></i> Formspree</span>
-                    </div>
-                </div>
-
-                <!--Frameworks & Lenguajes -->
-                <div class="herramienta-categoria">
-                    <h3><i class="fas fa-code-branch"></i> Frameworks & Lenguajes</h3>
-                    <div class="herramienta-items">
-                        <span class="herramienta-tag"><i class="fab fa-php"></i> PHP</span>
-                        <span class="herramienta-tag"><i class="fab fa-dart"></i> Dart</span>
-                        <span class="herramienta-tag"><i class="fab fa-flutter"></i> Flutter</span>
-                        <span class="herramienta-tag"><i class="fab fa-flutter"></i> Flutter Lab</span>
-                        <span class="herramienta-tag"><i class="fab fa-python"></i> Python</span>
-                        <span class="herramienta-tag"><i class="fab fa-microsoft"></i> .NET / C#</span>
-                        <span class="herramienta-tag"><i class="fab fa-java"></i> Java</span>
-                        <span class="herramienta-tag"><i class="fas fa-chart-line"></i> Matplotlib</span>
-                        <span class="herramienta-tag"><i class="fab fa-js"></i> JavaScript</span>
-                        <span class="herramienta-tag"><i class="fab fa-bootstrap"></i> Bootstrap</span>
-                    </div>
-                </div>
-
+                <!-- (Todo el contenido de herramientas se mantiene igual, pero por brevedad lo resumo) -->
+                <div class="herramienta-categoria"><h3><i class="fas fa-paint-brush"></i> Diseño UX/UI & Prototipado</h3><div class="herramienta-items"><span class="herramienta-tag"><i class="fab fa-figma"></i> Figma</span><span class="herramienta-tag"><i class="fab fa-adobe"></i> Adobe XD</span><span class="herramienta-tag"><i class="fas fa-brain"></i> Miro</span><span class="herramienta-tag"><i class="fas fa-cube"></i> Tinkercad</span><span class="herramienta-tag"><i class="fas fa-chalkboard"></i> Draw.io</span><span class="herramienta-tag"><i class="fas fa-project-diagram"></i> Bizagi</span><span class="herramienta-tag"><i class="fas fa-building"></i> ArchiMate</span><span class="herramienta-tag"><i class="fab fa-adobe"></i> Adobe Express</span></div></div>
+                <div class="herramienta-categoria"><h3><i class="fas fa-code"></i> IDEs y Editores</h3><div class="herramienta-items"><span class="herramienta-tag"><i class="fab fa-microsoft"></i> Visual Studio</span><span class="herramienta-tag"><i class="fas fa-code"></i> VS Code</span><span class="herramienta-tag"><i class="fab fa-java"></i> NetBeans</span><span class="herramienta-tag"><i class="fab fa-java"></i> IntelliJ IDEA</span><span class="herramienta-tag"><i class="fas fa-database"></i> MySQL Workbench</span><span class="herramienta-tag"><i class="fas fa-server"></i> SQL Server SSMS</span><span class="herramienta-tag"><i class="fas fa-terminal"></i> phpMyAdmin</span><span class="herramienta-tag"><i class="fas fa-database"></i> SQLite (DB Browser)</span><span class="herramienta-tag"><i class="fas fa-flask"></i> Jupyter Notebook</span><span class="herramienta-tag"><i class="fas fa-cloud-upload-alt"></i> Google Colab</span></div></div>
+                <div class="herramienta-categoria"><h3><i class="fas fa-database"></i> Bases de Datos & Servidores</h3><div class="herramienta-items"><span class="herramienta-tag"><i class="fas fa-database"></i> SQL Server</span><span class="herramienta-tag"><i class="fas fa-leaf"></i> MongoDB local</span><span class="herramienta-tag"><i class="fas fa-cloud"></i> MongoDB Atlas</span><span class="herramienta-tag"><i class="fas fa-database"></i> MySQL</span><span class="herramienta-tag"><i class="fas fa-table"></i> MySQL Yog</span><span class="herramienta-tag"><i class="fas fa-cloud-upload-alt"></i> NoSQL</span><span class="herramienta-tag"><i class="fas fa-database"></i> PostgreSQL</span><span class="herramienta-tag"><i class="fas fa-database"></i> SQLite</span><span class="herramienta-tag"><i class="fas fa-fire"></i> Firebase</span><span class="herramienta-tag"><i class="fas fa-server"></i> XAMPP</span><span class="herramienta-tag"><i class="fas fa-shield-alt"></i> Admin. Servidores</span></div></div>
+                <div class="herramienta-categoria"><h3><i class="fas fa-chart-line"></i> Ciencia de Datos e IA</h3><div class="herramienta-items"><span class="herramienta-tag"><i class="fab fa-python"></i> Python</span><span class="herramienta-tag"><i class="fas fa-calculator"></i> NumPy</span><span class="herramienta-tag"><i class="fas fa-table"></i> Pandas</span><span class="herramienta-tag"><i class="fas fa-chart-bar"></i> Matplotlib</span><span class="herramienta-tag"><i class="fas fa-chart-line"></i> Seaborn</span><span class="herramienta-tag"><i class="fas fa-brain"></i> Scikit-learn</span><span class="herramienta-tag"><i class="fab fa-python"></i> TensorFlow</span><span class="herramienta-tag"><i class="fas fa-microchip"></i> PyTorch</span><span class="herramienta-tag"><i class="fas fa-microchip"></i> Keras</span></div></div>
+                <div class="herramienta-categoria"><h3><i class="fas fa-laptop-code"></i> Desarrollo Frontend</h3><div class="herramienta-items"><span class="herramienta-tag"><i class="fab fa-html5"></i> HTML5</span><span class="herramienta-tag"><i class="fab fa-css3-alt"></i> CSS3</span><span class="herramienta-tag"><i class="fab fa-js"></i> JavaScript</span><span class="herramienta-tag"><i class="fab fa-bootstrap"></i> Bootstrap</span><span class="herramienta-tag"><i class="fas fa-database"></i> LocalStorage</span></div></div>
+                <div class="herramienta-categoria"><h3><i class="fas fa-tasks"></i> Gestión & Metodologías</h3><div class="herramienta-items"><span class="herramienta-tag"><i class="fab fa-trello"></i> Trello</span><span class="herramienta-tag"><i class="fab fa-jira"></i> Jira</span><span class="herramienta-tag"><i class="fas fa-chalkboard-user"></i> Scrum</span></div></div>
+                <div class="herramienta-categoria"><h3><i class="fas fa-cloud-upload-alt"></i> Despliegue & DevOps</h3><div class="herramienta-items"><span class="herramienta-tag"><i class="fas fa-cloud"></i> Render</span><span class="herramienta-tag"><i class="fas fa-vial"></i> Postman</span><span class="herramienta-tag"><i class="fas fa-mobile-alt"></i> Vysor</span><span class="herramienta-tag"><i class="fab fa-microsoft"></i> Azure</span><span class="herramienta-tag"><i class="fab fa-google"></i> Google Ads</span><span class="herramienta-tag"><i class="fas fa-chalkboard"></i> Flask</span><span class="herramienta-tag"><i class="fab fa-git-alt"></i> Git/GitHub</span><span class="herramienta-tag"><i class="fab fa-docker"></i> Docker</span><span class="herramienta-tag"><i class="fas fa-envelope-open-text"></i> Formspree</span></div></div>
+                <div class="herramienta-categoria"><h3><i class="fas fa-code-branch"></i> Frameworks & Lenguajes</h3><div class="herramienta-items"><span class="herramienta-tag"><i class="fab fa-php"></i> PHP</span><span class="herramienta-tag"><i class="fab fa-dart"></i> Dart</span><span class="herramienta-tag"><i class="fab fa-flutter"></i> Flutter</span><span class="herramienta-tag"><i class="fab fa-flutter"></i> Flutter Lab</span><span class="herramienta-tag"><i class="fab fa-python"></i> Python</span><span class="herramienta-tag"><i class="fab fa-microsoft"></i> .NET / C#</span><span class="herramienta-tag"><i class="fab fa-java"></i> Java</span><span class="herramienta-tag"><i class="fas fa-chart-line"></i> Matplotlib</span><span class="herramienta-tag"><i class="fab fa-js"></i> JavaScript</span><span class="herramienta-tag"><i class="fab fa-bootstrap"></i> Bootstrap</span></div></div>
             </div>
         </section>
 
-        <!-- Certificaciones -->
         <section id="certificaciones" class="section certificaciones">
-            <h2 class="section-title">Certificaciones</h2>
+            <h2 class="section-title">Certificaciones y Formación</h2>
             <div class="certificaciones-grid">
-                <div class="cert-categoria"><h3>💻 Tecnología y Datos</h3><ul><li>Bootcamp IA (159h) – Ministerio TIC, 2026</li><li>Power BI – Santander Open Academy, 2025</li><li>Análisis exploratorio con Python – SENA, 2024</li><li>Calidad del software – SENA, 2024</li></ul></div>
-                <div class="cert-categoria"><h3>📈 Marketing Digital</h3><ul><li>Marketing automation – Santander, 2025</li><li>SEO y Content Marketing – Santander, 2025</li><li>Google Ads – CCB, 2025</li></ul></div>
-                <div class="cert-categoria"><h3>☕ Formación Complementaria</h3><ul><li>Técnicas de café – SENA, 2020</li><li>Curso introductorio SENA, 2019</li></ul></div>
+                <div class="cert-categoria"><h3>🧠 Tecnología y Programación</h3><ul><li>Bootcamp Inteligencia Artificial (159h) – Ministerio TIC, 2026</li><li>Análisis Exploratorio de Datos en Python (48h) – SENA, 2024</li><li>Variables y Estructuras de Control en Python (48h) – SENA, 2024</li><li>Aplicación de la Calidad del Software (40h) – SENA, 2024</li><li>Power BI (8h) – Santander Open Academy, 2025</li></ul></div>
+                <div class="cert-categoria"><h3>🏦 Finanzas y Legal</h3><ul><li>SARLAFT – Sistema de Administración del Riesgo (40h) – SENA, 2024</li></ul></div>
+                <div class="cert-categoria"><h3>🌐 Telecomunicaciones</h3><ul><li>Reglamento Técnico para Redes Internas de Telecomunicaciones (40h) – SENA, 2024</li></ul></div>
+                <div class="cert-categoria"><h3>📦 Logística</h3><ul><li>Planeación logística: almacenamiento y organización inteligente (60h) – Cymetria Group, 2026</li></ul></div>
+                <div class="cert-categoria"><h3>📈 Marketing y Negocios Digitales</h3><ul><li>Marketing Digital – Fundación Telefónica, 2025</li><li>Marketing internacional – CCB, 2025</li><li>Mejora tu estrategia de marketing digital – CCB, 2025</li><li>Cross Border eCommerce – CCB, 2025</li><li>Google Ads – CCB, 2025</li><li>Marketing automation – Santander, 2025</li><li>SEO y Content Marketing – Santander, 2025</li><li>Storytelling – Santander, 2025</li></ul></div>
+                <div class="cert-categoria"><h3>💡 Innovación y Emprendimiento</h3><ul><li>Fundamentos de innovación – SENA, 2025</li><li>Construcción del proceso de innovación – SENA, 2025</li><li>El sentido de innovar – SENA, 2025</li><li>Innovación en solución de problemas – SENA, 2025</li></ul></div>
+                <div class="cert-categoria"><h3>🌍 Responsabilidad y Empresa</h3><ul><li>Conducta Empresarial Responsable – SENA, 2025</li></ul></div>
+                <div class="cert-categoria"><h3>🎨 Experiencia Digital y UX</h3><ul><li>Diseña una experiencia web exitosa para tus clientes – Google, 2025</li></ul></div>
+                <div class="cert-categoria"><h3>☕ Formación Complementaria</h3><ul><li>Técnicas para preparación de bebidas a base de café (40h) – SENA, 2020</li><li>Curso introductorio SENA, 2019</li></ul></div>
             </div>
             <p class="text-center mt-3">Idiomas: Español (nativo) · Inglés (básico-intermedio)</p>
         </section>
 
-        <!-- Experiencia Laboral -->
-        <section id="experiencia" class="section experiencia">
-            <h2 class="section-title">Trayectoria Profesional</h2>
-            <div class="experiencia-grid">
-                <div class="experiencia-item"><div class="exp-header"><span class="exp-fecha">Dic 2024 – Jul 2025</span><h3 class="exp-cargo">Colaborador / Operaciones</h3><span class="exp-empresa">Productividad Empresarial S.A.S.</span></div><ul class="exp-logros"><li>Gestión de solicitudes y cumplimiento de SLA.</li><li>Reportes operativos en Excel para KPIs.</li><li>Coordinación de escalamiento técnico.</li></ul></div>
-                <div class="experiencia-item"><div class="exp-header"><span class="exp-fecha">May 2024 – Oct 2024</span><h3 class="exp-cargo">Agente Antifraude</h3><span class="exp-empresa">ALMAEXPERIENCE (Banco Agrario)</span></div><ul class="exp-logros"><li>Desarrollo de protocolos antifraude.</li><li>Análisis financiero y validaciones.</li></ul></div>
-                <div class="experiencia-item"><div class="exp-header"><span class="exp-fecha">Ene 2022 – Abr 2023</span><h3 class="exp-cargo">Soporte Técnico</h3><span class="exp-empresa">TELEPERFORMANCE (Vodafone)</span></div><ul class="exp-logros"><li>Diagnóstico de fallas técnicas.</li><li>Optimización de flujos de atención.</li></ul></div>
-                <div class="experiencia-item"><div class="exp-header"><span class="exp-fecha">Ene 2017 – Dic 2018</span><h3 class="exp-cargo">Soldado</h3><span class="exp-empresa">Ejército Nacional</span></div><ul class="exp-logros"><li>Planificación estratégica.</li><li>Liderazgo y trabajo bajo presión.</li></ul></div>
-            </div>
-        </section>
-
-        <!-- Acerca de mí -->
-        <section id="acerca" class="section manifiesto">
-            <h2 class="section-title">Acerca de mí</h2>
+        <section id="artifice" class="section manifiesto">
+            <h2 class="section-title">El Artífice: universo de pasiones y propósitos</h2>
+            <p class="text-center mb-4" style="color: var(--purpura); font-style: italic;">✦ Donde el código, el cuerpo, el arte y la conciencia convergen ✦</p>
             <div class="manifiesto-contenido">
-                <p>Soy un apasionado por la tecnología con una trayectoria atípica: comencé en el servicio al cliente y las operaciones, donde desarrollé un pensamiento analítico agudo y resiliencia. Decidí formalizar mi pasión estudiando <strong>Análisis y Desarrollo de Software</strong> en el SENA, y complementé con un bootcamp de Inteligencia Artificial. Mi enfoque combina la disciplina militar, la experiencia en resolución de crisis y la creatividad técnica para construir software que resuelva problemas reales.</p>
-                <p>Creo firmemente en el aprendizaje continuo y en la convergencia de disciplinas: datos, software, biología y física. Mi objetivo es convertirme en un arquitecto de soluciones que trascienda lo convencional.</p>
-                <p><strong>Manifiesto:</strong> “No soy un desarrollador. Soy un traductor de escalas”.</p>
+                <p><i class="fas fa-microchip"></i> <strong> No soy una línea de código, soy un ecosistema.</strong> Construyo puentes entre el átomo y el bloque, entre la neurona y la red neuronal. Mi camino comenzó en la trinchera militar y el servicio al cliente, donde forjé disciplina, resiliencia y pensamiento analítico. Luego descubrí el software, y todo cambió. Aprendí a hablar el idioma de los datos, a diseñar confianza con blockchain, a soñar con la bioingeniería y a esculpir la materia con la nanoingeniería.</p>
+                <p><i class="fas fa-gamepad"></i> <strong> De los píxeles a la realidad.</strong> Videojuegos como <em>Assassin's Creed, GTA San Andreas, Prototype, Mortal Kombat</em> no son solo entretenimiento: son escuelas de estrategia, narrativa y superación de límites. Me enseñaron que todo sistema tiene una lógica y que siempre hay un camino para vencer al caos.</p>
+                <p><i class="fas fa-dumbbell"></i> <strong> Cuerpo, mente y espíritu.</strong> La calistenia forja mi templo físico; la meditación, mi centro mental. El arte del café (barismo) y la cata de vinos (enología) me enseñaron paciencia, precisión y aprecio por los procesos. Bailar, dibujar con carboncillo, tiza o lápiz, tocar el piano y escribir poesía son mis formas de dialogar con el alma.</p>
+                <p><i class="fas fa-globe-americas"></i> <strong> Curioso insaciable.</strong> Me apasiona la historia, los mitos, las leyendas y las civilizaciones guerreras. Los elementos de la tabla periódica y la alquimia me recuerdan que todo se transforma. Las culturas, los idiomas, el comercio, la moda, los animales, las fincas y la naturaleza son mis laboratorios de humanidad.</p>
+                <p><i class="fas fa-chart-line"></i> <strong> Crecimiento sin pausa.</strong> Leo sin parar, escribo sin filtro, estudio por placer. Cada error es un feedback, cada desafío una oportunidad para escalar. Mi meta a corto plazo es aportar valor como desarrollador .NET y científico de datos; a largo plazo, liderar equipos que integren IA, bioingeniería y sostenibilidad.</p>
+                <div class="intereses-tags" style="display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin: 1.5rem 0;">
+                    <span class="habilidad-tag">🎮 Videojuegos</span> <span class="habilidad-tag">🎨 Dibujo & Pintura</span> <span class="habilidad-tag">🏋️ Calistenia</span> <span class="habilidad-tag">🍷 Enología</span> <span class="habilidad-tag">☕ Barismo</span> <span class="habilidad-tag">📜 Poesía & Escritura</span> <span class="habilidad-tag">🎹 Piano</span> <span class="habilidad-tag">🧘 Meditación</span> <span class="habilidad-tag">🌿 Naturaleza & Animales</span> <span class="habilidad-tag">🏛️ Historia & Mitos</span> <span class="habilidad-tag">🧪 Alquimia & Tabla Periódica</span> <span class="habilidad-tag">✈️ Viajes & Culturas</span>
+                </div>
+                <p><i class="fas fa-brain"></i> <strong>Manifiesto integrador:</strong> “No soy un desarrollador, soy un traductor de escalas. Escalo desde el código hasta la conciencia, desde el dato hasta la danza, desde el algoritmo hasta la alquimia. Construyo puentes, no muros. Si buscas a alguien que encaje en una caja, no soy tu candidato. Pero si buscas a alguien que construya la caja, la conecte con otras cajas y luego imagine un mundo sin cajas… entonces, hablemos.”</p>
             </div>
         </section>
 
-        <!-- Reflexión Personal -->
-        <section id="reflexion" class="section">
-            <h2 class="section-title">Reflexión de mi camino como desarrollador</h2>
-            <div class="manifiesto-contenido">
-                <p><strong>¿Cómo he crecido?</strong> Desde que empecé el tecnólogo, he pasado de hacer scripts básicos a construir aplicaciones completas desplegadas en la nube. El bootcamp de IA me abrió la mente al potencial del machine learning y ahora puedo integrar modelos predictivos en aplicaciones web.</p>
-                <p><strong>Áreas de mejora:</strong> Quiero profundizar en pruebas automatizadas (TDD) y en arquitectura de microservicios. También mejorar mi inglés para acceder a documentación y comunidades internacionales.</p>
-                <p><strong>Metas a corto plazo:</strong> Obtener mi primera experiencia laboral como desarrollador .NET, contribuir a proyectos open source y obtener la certificación de Azure Fundamentals.</p>
-                <p><strong>Metas a largo plazo:</strong> Especializarme en Inteligencia Artificial aplicada a bioingeniería o finanzas, y liderar equipos técnicos multidisciplinarios.</p>
-            </div>
-        </section>
-
-        <!-- Contacto + Terminal -->
         <section id="contacto" class="section contacto">
             <h2 class="section-title">Contacto</h2>
             <div class="terminal">
-                <div class="terminal-header">
-                    <span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span>
-                    <span class="terminal-title">brayan@scale-architect:~/contacto</span>
-                </div>
-                <div class="terminal-body">
-                    <span class="prompt">brayan@scale-architect:~$</span>
-                    <span class="comando">status --disponible</span>
-                    <div class="respuesta-linea">
-                        <span class="respuesta-prefix">>></span>
-                        <span class="respuesta" id="terminal-text">online · abierto a oportunidades</span>
-                        <span class="cursor-blink">_</span>
-                    </div>
-                </div>
+                <div class="terminal-header"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-title">brayan@scale-architect:~/contacto</span></div>
+                <div class="terminal-body"><span class="prompt">brayan@scale-architect:~$</span> <span class="comando">status --disponible</span><div class="respuesta-linea"><span class="respuesta-prefix">>></span><span class="respuesta" id="terminal-text">online · abierto a oportunidades</span><span class="cursor-blink">_</span></div></div>
             </div>
             <div class="enlaces">
-                <a href="https://www.linkedin.com/in/brayan-ricardo-velasquez-davila-24a114226/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i> LinkedIn
-                </a>
-                <a href="https://github.com/Bvelasquez1369" target="_blank" rel="noopener" aria-label="GitHub">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="mailto:brayanvelasquez728@gmail.com" aria-label="Correo electrónico">
-                    <i class="fas fa-envelope"></i> Email
-                </a>
-                <a href="assets/pdfs/cv_brayan_ricardo_velasquez_davila.pdf" download class="btn-cv-movil" aria-label="Descargar CV">
-                    <i class="fas fa-download"></i> CV
-                </a>
+                <a href="https://www.linkedin.com/in/brayan-ricardo-velasquez-davila-24a114226/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                <a href="https://github.com/Bvelasquez1369" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="mailto:brayanvelasquez728@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                <a href="assets/pdfs/cv_brayan_ricardo_velasquez_davila.pdf" download class="btn-cv-movil"><i class="fas fa-download"></i> CV</a>
             </div>
             <p class="text-center mt-4 small">Bootcamp IA · 159h · Ministerio TIC 2026</p>
         </section>
 
-        <footer class="footer">
-            <p>© <span id="current-year"></span> Brayan Ricardo Velasquez Davila · Arquitecto de Escalas</p>
-            <p class="lema">“De la adversidad al algoritmo: construyendo puentes entre datos, código y propósito”</p>
+        <footer class="app-footer">
+            <div class="container">
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/brayan-ricardo-velasquez-davila-24a114226/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Bvelasquez1369" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="mailto:brayanvelasquez728@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p class="footer-copyright">© <span id="current-year"></span> Brayan Ricardo Velasquez Davila · Arquitecto de Escalas</p>
+            </div>
         </footer>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
