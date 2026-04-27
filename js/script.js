@@ -1,6 +1,6 @@
 const esMovil = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-// Cursor personalizado
+// Cursor personalizado (solo desktop)
 if (!esMovil) {
     const cursor = document.querySelector('.cursor');
     const seguidor = document.querySelector('.cursor-follower');
@@ -36,8 +36,10 @@ if (!esMovil) {
     let rayos = [];
     let explosiones = [];
     let mouse = { x: null, y: null, radius: esMovil ? 0 : 160 };
+    let lastTimestamp = 0;
+    const frameInterval = 1000 / 30; // limitar a 30 FPS para rendimiento
     
-    //  ESTRELLAS FIJAS
+    // ESTRELLAS FIJAS
     function createStars() {
         const count = esMovil ? 150 : 300;
         for (let i = 0; i < count; i++) {
@@ -154,7 +156,7 @@ if (!esMovil) {
         for (let i = 0; i < count; i++) particles.push(new Particle(Math.random()*w, Math.random()*h));
     }
     
-    // === CONEXIONES NEURONALES ===
+    // CONEXIONES NEURONALES
     function drawConnections() {
         if (esMovil) return;
         const maxDist = 160;
@@ -187,7 +189,7 @@ if (!esMovil) {
         ctx.shadowBlur = 0;
     }
     
-    // TRIÁNGULOS ENTRE PARTÍCULAS CERCANAS 
+    // TRIÁNGULOS ENTRE PARTÍCULAS CERCANAS
     function drawTriangles() {
         if (esMovil) return;
         const maxDist = 130;
@@ -213,7 +215,7 @@ if (!esMovil) {
         }
     }
     
-    // NEBULOSA 
+    // NEBULOSA
     function drawNebula() {
         const grad = ctx.createRadialGradient(w*0.5, h*0.5, 50, w*0.5, h*0.5, w*0.6);
         grad.addColorStop(0, 'rgba(35,20,70,0.2)');
@@ -353,9 +355,13 @@ if (!esMovil) {
         }
     }, 2500);
     
-    function animate() {
+    let lastFrame = 0;
+    function animate(now) {
+        requestAnimationFrame(animate);
+        if (now - lastFrame < frameInterval) return;
+        lastFrame = now;
+        
         ctx.clearRect(0, 0, w, h);
-        // fondo completamente negro (el canvas ya lo es, pero dejamos transparente para que se vea la nebulosa)
         ctx.fillStyle = '#0A0A0A';
         ctx.fillRect(0, 0, w, h);
         drawNebula();
@@ -367,13 +373,12 @@ if (!esMovil) {
         for (let s of shapes) { s.update(); s.draw(); }
         dibujarRayos();
         dibujarExplosiones();
-        requestAnimationFrame(animate);
     }
     
     if (!esMovil) window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
     window.addEventListener('resize', resize);
     resize();
-    animate();
+    requestAnimationFrame(animate);
 })();
 
 // Drawer y navegación
@@ -422,15 +427,17 @@ function type() {
 }
 type();
 
-// Proyectos
+// PROYECTOS (7 proyectos, con coma corregida)
 const projects = [
     { titulo: "LUMI STORE - E-commerce de Lujo", descripcion: "Plataforma completa para joyería y perfumería. Autenticación, carrito, PayPal y despliegue en Azure.", tecnologias: ["C#","ASP.NET Core MVC","SQL Server","Azure","PayPal"], icono: "icono-code", imagen: "assets/images/lumi.png", url: "#" },
     { titulo: "SGI - Gestión de Inventario con IA Predictiva", descripcion: "Control de stock y predicción de demanda con regresión lineal. Flask + PostgreSQL en Render.", tecnologias: ["Python","Flask","PostgreSQL","Scikit-learn"], icono: "icono-datos", imagen: "assets/images/sgi.png", url: "https://sig-6cr9.onrender.com" },
     { titulo: "Predicción de Trends con IA (TikTok)", descripcion: "Red neuronal con TensorFlow/Keras para predecir tendencias musicales.", tecnologias: ["Python","TensorFlow","Keras","Pandas"], icono: "icono-datos", imagen: "assets/images/limpieza_data.png", url: "#" },
     { titulo: "Crypto Herramientas - Accesorios", descripcion: "Tienda virtual de productos físicos para criptomonedas. Carrito con LocalStorage.", tecnologias: ["HTML5","CSS3","JavaScript","Bootstrap","LocalStorage"], icono: "icono-datos", imagen: "assets/images/crypto.png", url: "https://bvelasquez1369.github.io/crypto-herramienta/" },
     { titulo: "Gestor de Tareas", descripcion: "Aplicación web para gestionar tareas con categorías. Guarda datos en LocalStorage.", tecnologias: ["HTML5","CSS3","JavaScript","LocalStorage"], icono: "icono-datos", imagen: "assets/images/tarea.png", url: "https://bvelasquez1369.github.io/Gestor-de-Tareas/" },
-    { titulo: "Tarjeta de Perfil Dinámica", descripcion: "Tarjeta interactiva con efecto 3D, partículas y cambio de color.", tecnologias: ["HTML5","CSS3","JavaScript","Bootstrap","Bootstrap Icons"], icono: "icono-code", imagen: "assets/images/card.png", url: "https://bvelasquez1369.github.io/card-bootstrap-brayan/" }
+    { titulo: "Tarjeta de Perfil Dinámica", descripcion: "Tarjeta interactiva con efecto 3D, partículas y cambio de color.", tecnologias: ["HTML5","CSS3","JavaScript","Bootstrap","Bootstrap Icons"], icono: "icono-code", imagen: "assets/images/card.png", url: "https://bvelasquez1369.github.io/card-bootstrap-brayan/" },
+    { titulo: "Calculadora de Factorial (n!)", descripcion: "Aplicación web que calcula el factorial de un número entero no negativo, mostrando el resultado y el desglose completo de la multiplicación. Ideal para aprender matemáticas o comprobar cálculos rápidamente.", tecnologias: ["HTML5", "CSS3", "JavaScript"], icono: "icono-code", imagen: "assets/images/factorial.png", url: "https://bvelasquez1369.github.io/logica-programacion-3/" }
 ];
+
 function loadProjects() {
     const container = document.getElementById('proyectos-container');
     if (!container) return;

@@ -27,23 +27,23 @@
     <div class="cursor-follower"></div>
     <canvas id="particles-canvas"></canvas>
 
-    <div id="back-to-top" class="back-to-top"><i class="fas fa-arrow-up"></i></div>
+    <div id="back-to-top" class="back-to-top" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></div>
 
     <header class="app-header">
         <div class="container-fluid">
             <div class="app-header-content">
                 <img src="assets/images/icono.png" alt="Logo" class="app-logo" width="40" height="40">
-                <button class="menu-toggle" id="menuToggle" aria-label="Menú"><i class="fas fa-bars"></i></button>
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú"><i class="fas fa-bars"></i></button>
             </div>
         </div>
     </header>
 
-    <div id="drawer" class="drawer">
+    <div id="drawer" class="drawer" role="dialog" aria-label="Menú de navegación">
         <div class="drawer-header">
             <h3>Brayan Velasquez</h3>
-            <button id="closeDrawer" class="close-drawer"><i class="fas fa-times"></i></button>
+            <button id="closeDrawer" class="close-drawer" aria-label="Cerrar menú"><i class="fas fa-times"></i></button>
         </div>
-        <nav class="drawer-nav">
+        <nav class="drawer-nav" aria-label="Navegación principal">
             <a href="#inicio" class="drawer-link active"><i class="fas fa-home"></i> Inicio</a>
             <a href="#proyectos" class="drawer-link"><i class="fas fa-code-branch"></i> Proyectos</a>
             <a href="#herramientas" class="drawer-link"><i class="fas fa-tools"></i> Herramientas</a>
@@ -77,7 +77,6 @@
         <section id="herramientas" class="section herramientas">
             <h2 class="section-title">Algunas de las herramientas que utilizo</h2>
             <div class="herramientas-grid">
-                <!-- (Todo el contenido de herramientas se mantiene igual, pero por brevedad lo resumo) -->
                 <div class="herramienta-categoria"><h3><i class="fas fa-paint-brush"></i> Diseño UX/UI & Prototipado</h3><div class="herramienta-items"><span class="herramienta-tag"><i class="fab fa-figma"></i> Figma</span><span class="herramienta-tag"><i class="fab fa-adobe"></i> Adobe XD</span><span class="herramienta-tag"><i class="fas fa-brain"></i> Miro</span><span class="herramienta-tag"><i class="fas fa-cube"></i> Tinkercad</span><span class="herramienta-tag"><i class="fas fa-chalkboard"></i> Draw.io</span><span class="herramienta-tag"><i class="fas fa-project-diagram"></i> Bizagi</span><span class="herramienta-tag"><i class="fas fa-building"></i> ArchiMate</span><span class="herramienta-tag"><i class="fab fa-adobe"></i> Adobe Express</span></div></div>
                 <div class="herramienta-categoria"><h3><i class="fas fa-code"></i> IDEs y Editores</h3><div class="herramienta-items"><span class="herramienta-tag"><i class="fab fa-microsoft"></i> Visual Studio</span><span class="herramienta-tag"><i class="fas fa-code"></i> VS Code</span><span class="herramienta-tag"><i class="fab fa-java"></i> NetBeans</span><span class="herramienta-tag"><i class="fab fa-java"></i> IntelliJ IDEA</span><span class="herramienta-tag"><i class="fas fa-database"></i> MySQL Workbench</span><span class="herramienta-tag"><i class="fas fa-server"></i> SQL Server SSMS</span><span class="herramienta-tag"><i class="fas fa-terminal"></i> phpMyAdmin</span><span class="herramienta-tag"><i class="fas fa-database"></i> SQLite (DB Browser)</span><span class="herramienta-tag"><i class="fas fa-flask"></i> Jupyter Notebook</span><span class="herramienta-tag"><i class="fas fa-cloud-upload-alt"></i> Google Colab</span></div></div>
                 <div class="herramienta-categoria"><h3><i class="fas fa-database"></i> Bases de Datos & Servidores</h3><div class="herramienta-items"><span class="herramienta-tag"><i class="fas fa-database"></i> SQL Server</span><span class="herramienta-tag"><i class="fas fa-leaf"></i> MongoDB local</span><span class="herramienta-tag"><i class="fas fa-cloud"></i> MongoDB Atlas</span><span class="herramienta-tag"><i class="fas fa-database"></i> MySQL</span><span class="herramienta-tag"><i class="fas fa-table"></i> MySQL Yog</span><span class="herramienta-tag"><i class="fas fa-cloud-upload-alt"></i> NoSQL</span><span class="herramienta-tag"><i class="fas fa-database"></i> PostgreSQL</span><span class="herramienta-tag"><i class="fas fa-database"></i> SQLite</span><span class="herramienta-tag"><i class="fas fa-fire"></i> Firebase</span><span class="herramienta-tag"><i class="fas fa-server"></i> XAMPP</span><span class="herramienta-tag"><i class="fas fa-shield-alt"></i> Admin. Servidores</span></div></div>
@@ -128,10 +127,10 @@
                 <div class="terminal-body"><span class="prompt">brayan@scale-architect:~$</span> <span class="comando">status --disponible</span><div class="respuesta-linea"><span class="respuesta-prefix">>></span><span class="respuesta" id="terminal-text">online · abierto a oportunidades</span><span class="cursor-blink">_</span></div></div>
             </div>
             <div class="enlaces">
-                <a href="https://www.linkedin.com/in/brayan-ricardo-velasquez-davila-24a114226/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-                <a href="https://github.com/Bvelasquez1369" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="mailto:brayanvelasquez728@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-                <a href="assets/pdfs/cv_brayan_ricardo_velasquez_davila.pdf" download class="btn-cv-movil"><i class="fas fa-download"></i> CV</a>
+                <a href="https://www.linkedin.com/in/brayan-ricardo-velasquez-davila-24a114226/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                <a href="https://github.com/Bvelasquez1369" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i> GitHub</a>
+                <a href="mailto:brayanvelasquez728@gmail.com" aria-label="Correo electrónico"><i class="fas fa-envelope"></i> Email</a>
+                <a href="assets/pdfs/cv_brayan_ricardo_velasquez_davila.pdf" download class="btn-cv-movil" aria-label="Descargar CV"><i class="fas fa-download"></i> CV</a>
             </div>
             <p class="text-center mt-4 small">Bootcamp IA · 159h · Ministerio TIC 2026</p>
         </section>

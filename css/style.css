@@ -16,7 +16,7 @@
 }
 html { scroll-behavior: smooth; }
 body {
-    background-color: transparent;  /* ← ya no hay negro sólido */
+    background-color: transparent;
     color: var(--gris-platino);
     font-family: var(--font-sans);
     line-height: 1.6;
@@ -155,13 +155,12 @@ h1, h2, h3, .section-title, .prompt, .comando { font-family: var(--font-mono); f
     height: 2px;
     background: linear-gradient(90deg, var(--indigo), transparent);
 }
-/* HEADER APP (transparente) */
 .app-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: transparent;  /* ← completamente transparente */
+    background: transparent;
     backdrop-filter: blur(8px);
     z-index: 1001;
     padding: 0.8rem 0;
@@ -188,7 +187,6 @@ h1, h2, h3, .section-title, .prompt, .comando { font-family: var(--font-mono); f
     transition: color 0.2s;
 }
 .menu-toggle:hover { color: var(--purpura); }
-/* DRAWER (semi-transparente) */
 .drawer {
     position: fixed;
     top: 0;
@@ -255,7 +253,6 @@ h1, h2, h3, .section-title, .prompt, .comando { font-family: var(--font-mono); f
     border-left-color: var(--indigo);
     color: var(--indigo);
 }
-/* SECCIONES */
 .section {
     min-height: 100vh;
     padding: 6rem 0 4rem;
@@ -577,7 +574,6 @@ h1, h2, h3, .section-title, .prompt, .comando { font-family: var(--font-mono); f
     color: var(--negro-profundo);
     transform: translateY(-2px);
 }
-/* FOOTER APP (transparente) */
 .app-footer {
     text-align: center;
     padding: 2rem 1rem 1.5rem;
